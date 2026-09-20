@@ -1,5 +1,16 @@
 # Modern Blue — Blogger Theme
 
+## Quick option: one-file upload
+
+**`real-asset-coin-theme.xml`** is the full theme with the REAL ASSET COIN
+mockup content baked directly into the page (as a static HTML section) —
+upload just this one file and the complete page renders immediately, no
+need to also create a blog post. Blog posts (if you add any later) still
+appear below it using the same styling. See the "Sample post" section
+below for what's real vs. placeholder in that content — the same rules
+apply here.
+
+
 A minimal, modern Blogger (Blogspot) theme in a blue palette. Single-column
 layout focused entirely on the blog post — no sidebar, no widget clutter.
 

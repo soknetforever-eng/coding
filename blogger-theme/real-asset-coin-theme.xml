@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true'
+  xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'
+  xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  </b:if>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap' rel='stylesheet'/>
+  <b:include data='blog' name='all-head-content'/>
+
+  <b:skin><![CDATA[
+:root{
+  --blue-50:#eff6ff;
+  --blue-100:#dbeafe;
+  --blue-200:#bfdbfe;
+  --blue-500:#3b82f6;
+  --blue-600:#2563eb;
+  --blue-700:#1d4ed8;
+  --blue-900:#1e3a8a;
+  --ink:#0f172a;
+  --ink-soft:#475569;
+  --paper:#ffffff;
+  --bg:#f4f7fc;
+  --border:#e2e8f0;
+  --radius:16px;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif:'Merriweather', Georgia, serif;
+  --max-w:720px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#e2e8f0;
+    --ink-soft:#94a3b8;
+    --paper:#111827;
+    --bg:#0b1120;
+    --border:#1f2937;
+    --blue-50:#0f1b33;
+    --blue-100:#122246;
+  }
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--blue-600); text-decoration:none;}
+a:hover{color:var(--blue-700); text-decoration:underline;}
+img{max-width:100%; height:auto; display:block;}
+
+/* Header */
+.site-header{
+  background:linear-gradient(135deg, var(--blue-700), var(--blue-500));
+  color:#fff;
+  padding:56px 24px 64px;
+  text-align:center;
+}
+.site-title{
+  margin:0;
+  font-size:clamp(28px,5vw,42px);
+  font-weight:800;
+  letter-spacing:-0.02em;
+}
+.site-title a{color:#fff; text-decoration:none;}
+.site-description{
+  margin:10px auto 0;
+  max-width:520px;
+  color:var(--blue-100);
+  font-size:16px;
+  font-weight:500;
+}
+
+/* Layout */
+.content-wrap{
+  max-width:var(--max-w);
+  margin:-32px auto 0;
+  padding:0 20px 60px;
+}
+.blog-posts{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+/* Post card */
+.post-card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px clamp(20px,5vw,44px);
+  box-shadow:0 1px 2px rgba(15,23,42,0.04), 0 12px 32px -16px rgba(30,58,138,0.18);
+  margin-bottom:28px;
+}
+.post-title{
+  font-size:clamp(22px,4vw,32px);
+  font-weight:800;
+  line-height:1.25;
+  letter-spacing:-0.01em;
+  margin:0 0 12px;
+}
+.post-title a{color:var(--ink);}
+.post-title a:hover{color:var(--blue-600); text-decoration:none;}
+.post-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  margin-bottom:22px;
+}
+.post-meta .post-date{color:var(--blue-600);}
+
+.post-body{
+  font-family:var(--font-serif);
+  font-size:18px;
+  color:var(--ink);
+}
+.post-body p{margin:0 0 20px;}
+.post-body h1,.post-body h2,.post-body h3,.post-body h4{
+  font-family:var(--font-body);
+  font-weight:700;
+  color:var(--ink);
+  margin:32px 0 14px;
+}
+.post-body blockquote{
+  margin:24px 0;
+  padding:4px 20px;
+  border-left:4px solid var(--blue-500);
+  background:var(--blue-50);
+  color:var(--ink-soft);
+  font-style:italic;
+  border-radius:0 8px 8px 0;
+}
+.post-body pre, .post-body code{
+  font-family:'SFMono-Regular', Consolas, monospace;
+  background:var(--blue-50);
+  border-radius:6px;
+}
+.post-body pre{padding:16px; overflow-x:auto;}
+.post-body code{padding:2px 6px; font-size:0.9em;}
+.post-body img, .post-body iframe{border-radius:12px; margin:20px 0;}
+.post-body a{text-decoration:underline; text-decoration-color:var(--blue-200);}
+
+/* Tables (e.g. tokenomics) */
+.post-body table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  font-family:var(--font-body);
+  font-size:15px;
+}
+.post-body th, .post-body td{
+  padding:12px 14px;
+  border:1px solid var(--border);
+  text-align:left;
+}
+.post-body th{
+  background:var(--blue-50);
+  color:var(--blue-900);
+  font-weight:700;
+}
+.post-body tr:nth-child(even) td{background:rgba(37,99,235,0.03);}
+
+/* Stat cards (e.g. token details grid) */
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+  gap:12px;
+  margin:24px 0;
+}
+.stat-card{
+  background:var(--blue-50);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+}
+.stat-card .stat-label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.stat-card .stat-value{
+  display:block;
+  font-family:var(--font-body);
+  font-size:18px;
+  font-weight:800;
+  color:var(--blue-700);
+}
+
+/* Callout boxes */
+.callout{
+  margin:24px 0;
+  padding:16px 20px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--blue-50);
+  font-family:var(--font-body);
+  font-size:15px;
+}
+.callout-warning{
+  background:#fff7ed;
+  border-color:#fdba74;
+  color:#7c2d12;
+}
+.callout-warning strong{color:#9a3412;}
+.callout strong{color:var(--blue-900);}
+
+/* CTA button (e.g. how to buy) */
+.btn{
+  display:inline-block;
+  background:var(--blue-600);
+  color:#fff !important;
+  font-family:var(--font-body);
+  font-weight:700;
+  padding:12px 24px;
+  border-radius:10px;
+  text-decoration:none !important;
+  margin:6px 8px 6px 0;
+}
+.btn:hover{background:var(--blue-700);}
+.btn-outline{
+  background:transparent;
+  color:var(--blue-600) !important;
+  border:2px solid var(--blue-500);
+  padding:10px 22px;
+}
+.btn-outline:hover{background:var(--blue-50);}
+
+.read-more{margin-top:8px;}
+.read-more a{
+  display:inline-block;
+  font-weight:700;
+  color:var(--blue-600);
+}
+
+.post-footer{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.post-labels{display:flex; flex-wrap:wrap; gap:8px;}
+.post-labels a{
+  background:var(--blue-50);
+  color:var(--blue-700);
+  font-size:12px;
+  font-weight:700;
+  padding:5px 12px;
+  border-radius:999px;
+}
+.post-labels a:hover{background:var(--blue-100); text-decoration:none;}
+.comment-link{font-size:13px; font-weight:700; color:var(--ink-soft);}
+
+/* Comments (Blogger default markup, restyled) */
+.comments{margin-top:32px; padding-top:24px; border-top:1px solid var(--border);}
+.comments h4{font-size:18px; font-weight:800; margin:0 0 16px;}
+#comments-block{margin:0;}
+.comment-author{font-weight:700; font-size:14px; margin-top:16px;}
+.comment-body{margin:4px 0 0; color:var(--ink-soft); font-size:15px;}
+.comment-footer{margin-top:18px;}
+
+/* Pager */
+.blog-pager{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:8px;
+}
+.blog-pager a{
+  flex:1;
+  text-align:center;
+  padding:14px 18px;
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-weight:700;
+  color:var(--ink);
+}
+.blog-pager a:hover{
+  border-color:var(--blue-500);
+  color:var(--blue-600);
+  text-decoration:none;
+}
+
+/* Footer */
+.site-footer{
+  text-align:center;
+  padding:32px 20px 48px;
+  color:var(--ink-soft);
+  font-size:13px;
+}
+.site-footer a{color:var(--ink-soft); font-weight:600;}
+
+/* Status message (no posts, search results empty, etc.) */
+.status-msg-wrap{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+  text-align:center;
+  color:var(--ink-soft);
+}
+
+@media (max-width:640px){
+  .site-header{padding:40px 20px 52px;}
+  .content-wrap{margin-top:-24px;}
+  .post-card{padding:26px 20px;}
+}
+]]></b:skin>
+</head>
+<body>
+
+<header class='site-header'>
+  <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+    <b:widget id='Header1' locked='true' title='REAL ASSET COIN' type='Header' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='displayUrl'/>
+        <b:widget-setting name='displayHeight'>0</b:widget-setting>
+        <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+        <b:widget-setting name='displayWidth'>0</b:widget-setting>
+        <b:widget-setting name='useImage'>false</b:widget-setting>
+        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+        <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <h1 class='site-title'>
+          <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+        </h1>
+        <b:if cond='data:blog.description'>
+          <p class='site-description'><data:blog.description/></p>
+        </b:if>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</header>
+
+<main class='content-wrap'>
+
+  <!-- Static showcase content: renders immediately on upload, no post needed -->
+  <b:section class='showcase' id='showcase' maxwidgets='1' showaddelement='no'>
+    <b:widget id='HTML1' locked='false' title='' type='HTML' version='2'>
+      <b:includable id='main'>
+        <article class='post-card'>
+
+          <div class='callout callout-warning'>
+            <strong>SAMPLE / MOCKUP CONTENT.</strong> This section is a design
+            template only. Every figure, address, date, and claim below is a
+            placeholder for illustration &#8212; <strong>none of it describes a
+            real, live, or registered token.</strong> Replace every placeholder
+            with accurate, verifiable information about your actual project
+            before publishing, and consult a qualified legal/financial advisor
+            before soliciting investment in any jurisdiction.
+          </div>
+
+          <h2 class='post-title'>REAL ASSET COIN</h2>
+          <div class='post-meta'><span class='post-date'>Project overview</span></div>
+
+          <div class='post-body'>
+            <h2>What is REAL ASSET COIN?</h2>
+            <p>
+              <em>[Replace this paragraph with an accurate description of your
+              project: what problem it solves, who built it, and what makes it
+              different. Avoid claims you can't substantiate &#8212; e.g. "backed
+              by real assets" should only appear if there is a verifiable
+              custodian, audit, or proof-of-reserve mechanism you can link to.]</em>
+            </p>
+
+            <h2>Token details</h2>
+            <div class='stat-grid'>
+              <div class='stat-card'>
+                <span class='stat-label'>Name</span>
+                <span class='stat-value'>REAL ASSET COIN</span>
+              </div>
+              <div class='stat-card'>
+                <span class='stat-label'>Symbol</span>
+                <span class='stat-value'>REAL</span>
+              </div>
+              <div class='stat-card'>
+                <span class='stat-label'>Decimals</span>
+                <span class='stat-value'>18</span>
+              </div>
+              <div class='stat-card'>
+                <span class='stat-label'>Network</span>
+                <span class='stat-value'>[e.g. Ethereum]</span>
+              </div>
+            </div>
+
+            <table>
+              <tr><th>Field</th><th>Value</th></tr>
+              <tr><td>Contract address</td><td><code>0x0000000000000000000000000000000000 (placeholder &#8212; insert verified address)</code></td></tr>
+              <tr><td>Total supply</td><td>[e.g. 1,000,000,000 REAL] <em>(example only)</em></td></tr>
+              <tr><td>Audit report</td><td>[Link to a real, named third-party audit, or remove this row]</td></tr>
+            </table>
+
+            <h2>Tokenomics <em>(example allocation &#8212; replace with your real figures)</em></h2>
+            <table>
+              <tr><th>Allocation</th><th>Percent</th><th>Notes</th></tr>
+              <tr><td>Public sale</td><td>[XX%]</td><td>[vesting/lockup terms]</td></tr>
+              <tr><td>Team &amp; advisors</td><td>[XX%]</td><td>[vesting schedule]</td></tr>
+              <tr><td>Ecosystem / treasury</td><td>[XX%]</td><td>[use of funds]</td></tr>
+              <tr><td>Liquidity</td><td>[XX%]</td><td>[exchange(s)]</td></tr>
+            </table>
+
+            <h2>Utility</h2>
+            <p><em>[List concretely what REAL is actually used for &#8212; e.g.
+            governance, fee payment, staking rewards &#8212; only include what is
+            real and functioning or clearly marked "planned."]</em></p>
+            <ul>
+              <li>[Utility point 1]</li>
+              <li>[Utility point 2]</li>
+              <li>[Utility point 3]</li>
+            </ul>
+
+            <h2>Roadmap <em>(illustrative &#8212; replace with your real milestones and dates)</em></h2>
+            <ul>
+              <li><strong>[Q_ 20__]</strong> &#8212; [Milestone]</li>
+              <li><strong>[Q_ 20__]</strong> &#8212; [Milestone]</li>
+              <li><strong>[Q_ 20__]</strong> &#8212; [Milestone]</li>
+            </ul>
+
+            <h2>How to buy</h2>
+            <p><em>[Only list exchanges/DEXs where the token is actually listed.]</em></p>
+            <p>
+              <a class='btn' href='#'>[Buy on Exchange &#8212; placeholder link]</a>
+              <a class='btn btn-outline' href='#'>[Read whitepaper &#8212; placeholder link]</a>
+            </p>
+
+            <h2>FAQ</h2>
+            <p><strong>Is REAL backed by real-world assets?</strong><br/>
+            [Answer honestly. If there is no verifiable backing mechanism, say
+            so plainly rather than implying one.]</p>
+            <p><strong>Is this financial advice?</strong><br/>
+            No &#8212; see disclaimer below.</p>
+
+            <div class='callout callout-warning'>
+              <strong>Risk disclaimer:</strong> Cryptocurrencies are highly
+              volatile and speculative assets. Nothing in this page is
+              financial, investment, legal, or tax advice, and nothing here is
+              an offer or solicitation to buy or sell any security or token in
+              any jurisdiction where such an offer would be unlawful. You could
+              lose some or all of the money you put in. Past performance and
+              projected roadmaps are not guarantees of future results. Do your
+              own research and consult a licensed professional before making
+              any investment decision.
+            </div>
+          </div>
+        </article>
+      </b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- Real blog posts (if/when you publish any) still appear below -->
+  <b:section class='main' id='main' showaddelement='no'>
+    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+        <b:widget-setting name='style.textcolor'>#0f172a</b:widget-setting>
+      </b:widget-settings>
+
+      <b:includable id='main' var='top'>
+        <b:include name='status-message'/>
+        <div class='blog-posts hfeed'>
+          <b:loop values='data:posts' var='post'>
+            <b:include data='post' name='post'/>
+          </b:loop>
+        </div>
+        <b:include name='nextprev'/>
+      </b:includable>
+
+      <b:includable id='post' var='post'>
+        <article class='post-card' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+          <b:if cond='data:post.title'>
+            <h2 class='post-title' itemprop='name headline'>
+              <b:if cond='data:view.isMultipleItems'>
+                <a expr:href='data:post.url'><data:post.title/></a>
+              <b:else/>
+                <data:post.title/>
+              </b:if>
+            </h2>
+          </b:if>
+
+          <div class='post-meta'>
+            <span class='post-date'>
+              <time expr:datetime='data:post.timestampISO8601'><data:post.dateHeader/></time>
+            </span>
+            <b:if cond='data:post.author'>
+              <span class='post-author'><data:post.author/></span>
+            </b:if>
+          </div>
+
+          <div expr:id='"post-body-" + data:post.id' class='post-body' itemprop='articleBody'>
+            <data:post.body/>
+          </div>
+
+          <b:if cond='data:post.hasJumpLink'>
+            <div class='read-more'>
+              <a expr:href='data:post.url + "#more"'><data:post.jumpText/></a>
+            </div>
+          </b:if>
+
+          <footer class='post-footer'>
+            <b:if cond='data:post.labels'>
+              <div class='post-labels'>
+                <b:loop values='data:post.labels' var='label'>
+                  <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                </b:loop>
+              </div>
+            </b:if>
+            <b:if cond='data:view.isMultipleItems'>
+              <a class='comment-link' expr:href='data:post.url + "#comments"'>
+                <data:post.numberOfComments/> comments
+              </a>
+            </b:if>
+          </footer>
+
+          <b:if cond='data:view.isSingleItem'>
+            <b:include data='post' name='comments'/>
+          </b:if>
+        </article>
+      </b:includable>
+
+      <b:includable id='nextprev'>
+        <b:if cond='data:olderPageUrl or data:newerPageUrl'>
+          <div class='blog-pager'>
+            <b:if cond='data:newerPageUrl'>
+              <a expr:href='data:newerPageUrl'><data:newerPageTitle/></a>
+            </b:if>
+            <b:if cond='data:olderPageUrl'>
+              <a expr:href='data:olderPageUrl'><data:olderPageTitle/></a>
+            </b:if>
+          </div>
+        </b:if>
+      </b:includable>
+
+      <b:includable id='status-message'>
+        <b:if cond='data:navMessage'>
+          <div class='status-msg-wrap'>
+            <data:navMessage/>
+          </div>
+        </b:if>
+      </b:includable>
+
+    </b:widget>
+  </b:section>
+
+</main>
+
+<footer class='site-footer'>
+  <b:section class='footer' id='footer' showaddelement='yes'>
+    <b:widget id='Text1' locked='false' title='' type='Text' version='2'>
+      <b:includable id='main'>
+        <p>&#169; <data:blog.pageTitle/> &#8212; Powered by <a href='https://www.blogger.com'>Blogger</a></p>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</footer>
+
+</body>
+</html>
