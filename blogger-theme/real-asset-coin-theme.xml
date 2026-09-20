@@ -356,11 +356,9 @@ img{max-width:100%; height:auto; display:block;}
 
 <main class='content-wrap'>
 
-  <!-- Static showcase content: renders immediately on upload, no post needed -->
-  <b:section class='showcase' id='showcase' maxwidgets='1' showaddelement='no'>
-    <b:widget id='HTML1' locked='false' title='' type='HTML' version='2'>
-      <b:includable id='main'>
-        <article class='post-card'>
+  <!-- Static showcase content: plain HTML (not a widget), always renders on upload -->
+  <div class='showcase'>
+    <article class='post-card'>
 
           <div class='callout callout-warning'>
             <strong>SAMPLE / MOCKUP CONTENT.</strong> This section is a design
@@ -465,9 +463,7 @@ img{max-width:100%; height:auto; display:block;}
             </div>
           </div>
         </article>
-      </b:includable>
-    </b:widget>
-  </b:section>
+  </div>
 
   <!-- Real blog posts (if/when you publish any) still appear below -->
   <b:section class='main' id='main' showaddelement='no'>
@@ -568,6 +564,9 @@ img{max-width:100%; height:auto; display:block;}
 <footer class='site-footer'>
   <b:section class='footer' id='footer' showaddelement='yes'>
     <b:widget id='Text1' locked='false' title='' type='Text' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='content'/>
+      </b:widget-settings>
       <b:includable id='main'>
         <p>&#169; <data:blog.pageTitle/> &#8212; Powered by <a href='https://www.blogger.com'>Blogger</a></p>
       </b:includable>
