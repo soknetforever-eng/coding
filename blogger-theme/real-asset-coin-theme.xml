@@ -337,7 +337,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
 <body>
 
 <div class='announce'>
-  <strong>Demo template.</strong> Every figure, address, and claim on this page is a placeholder &#8212; replace with real, verified information before publishing.
+  <strong>Concept demo.</strong> REAL ASSET COIN has not launched. Nothing here is deployed, audited, or for sale &#8212; see the disclaimer at the bottom of the page.
 </div>
 
 <header>
@@ -368,7 +368,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
               <a href='#faq'>FAQ</a>
             </div>
             <div class='nav-right'>
-              <a class='btn btn-primary btn-sm' href='#buy'>Buy REAL</a>
+              <a class='btn btn-primary btn-sm' href='#buy'>Get Started</a>
               <label class='nav-toggle' for='navToggle' aria-label='Toggle menu'>
                 <span></span><span></span><span></span>
               </label>
@@ -385,18 +385,18 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
   <!-- HERO -->
   <section class='hero'>
     <div class='hero-inner'>
-      <span class='badge'><span class='dot'></span>REAL &#183; 18 Decimals &#183; [Network]</span>
-      <h1>REAL ASSET COIN</h1>
-      <p class='lead'><em>[Replace with your real one-line value proposition &#8212; what REAL actually does and for whom. Don't claim real-world asset backing, guaranteed returns, or audits unless you can link to verifiable proof.]</em></p>
+      <span class='badge'><span class='dot'></span>REAL &#183; 18 Decimals &#183; Ethereum (planned)</span>
+      <h1>Real-world value,<br/>built to move on-chain</h1>
+      <p class='lead'>REAL ASSET COIN is a concept for turning real-world value &#8212; property, commodities, revenue-sharing agreements &#8212; into a single transparent, tradable, on-chain token. This page is a concept demonstration of that vision: nothing is deployed, audited, or listed yet, and every number below is illustrative.</p>
       <div class='hero-ctas'>
-        <a class='btn btn-primary' href='#buy'>Buy REAL &#8594;</a>
-        <a class='btn btn-outline' href='#'>Read Whitepaper</a>
+        <a class='btn btn-primary' href='#buy'>Get Notified at Launch &#8594;</a>
+        <a class='btn btn-outline' href='#about'>Read the Vision</a>
       </div>
       <div class='stat-pills'>
         <div class='stat-pill'><span class='k'>Name</span><span class='v'>REAL ASSET COIN</span></div>
         <div class='stat-pill'><span class='k'>Symbol</span><span class='v'>REAL</span></div>
         <div class='stat-pill'><span class='k'>Decimals</span><span class='v'>18</span></div>
-        <div class='stat-pill'><span class='k'>Network</span><span class='v'>[e.g. Ethereum]</span></div>
+        <div class='stat-pill'><span class='k'>Network</span><span class='v'>Ethereum</span></div>
       </div>
     </div>
   </section>
@@ -409,20 +409,20 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
           <span class='eyebrow'>About</span>
           <h2 class='section-title'>What is REAL ASSET COIN?</h2>
           <p class='section-desc' style='margin-bottom:24px;'>
-            <em>[Replace this paragraph with an accurate description of your project: what problem it solves, who built it, and what makes it different. Only state facts you can back up.]</em>
+            Traditional ownership of real-world value &#8212; property, commodities, income-generating agreements &#8212; is slow, paper-heavy, and hard to transfer. REAL ASSET COIN imagines a single ERC-20 token that represents a transparent, fractional, instantly-transferable claim on that value, governed by its holders and verified by independent custodians rather than a single company. It's an early-stage concept: the vision below is what a fully-built, investor-ready version of that idea would look like &#8212; not a claim that it exists today.
           </p>
           <ul class='checklist'>
             <li>
-              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>
-              <span>Audit: <strong>[link to a real, named third-party audit &#8212; or state "not yet audited"]</strong></span>
+              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 8v5M12 16h.01'/></svg>
+              <span>Audit: <strong>not yet completed</strong> &#8212; scheduled ahead of any mainnet deployment</span>
             </li>
             <li>
-              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>
-              <span>Legal entity: <strong>[registered name / jurisdiction, or "none yet"]</strong></span>
+              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 8v5M12 16h.01'/></svg>
+              <span>Legal entity: <strong>not yet formed</strong> &#8212; to be established before any public sale</span>
             </li>
             <li>
-              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>
-              <span>Proof of reserves: <strong>[link, or "no backing claimed"]</strong></span>
+              <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 8v5M12 16h.01'/></svg>
+              <span>Real-world backing: <strong>none today</strong> &#8212; REAL is a concept demo and holds no assets</span>
             </li>
           </ul>
         </div>
@@ -445,15 +445,15 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
             <div class='icon-tile'>
               <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M3 12h18M12 3c-3 4-3 14 0 18M12 3c3 4 3 14 0 18'/></svg>
             </div>
-            <div class='feature-title'>[Network]</div>
-            <div class='feature-desc'>Blockchain</div>
+            <div class='feature-title'>Ethereum</div>
+            <div class='feature-desc'>Blockchain (planned)</div>
           </div>
           <div class='card'>
             <div class='icon-tile'>
               <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/></svg>
             </div>
-            <div class='feature-title'>[Supply]</div>
-            <div class='feature-desc'>Total supply</div>
+            <div class='feature-title'>1B</div>
+            <div class='feature-desc'>Total supply (example)</div>
           </div>
         </div>
       </div>
@@ -465,7 +465,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Tokenomics</span>
       <h2 class='section-title'>Token allocation</h2>
-      <p class='section-desc'><em>Example allocation shown below &#8212; replace with your real figures.</em></p>
+      <p class='section-desc'>An illustrative allocation for a project at this stage &#8212; weighted toward public distribution and a long team vesting schedule, so incentives stay aligned with holders over time.</p>
 
       <div class='tokenomics-grid'>
         <div class='donut-wrap'>
@@ -478,14 +478,14 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
         <div>
           <div class='legend'>
             <div class='legend-item'><span class='l'><span class='legend-dot' style='background:var(--blue-500);'></span>Public sale</span><span class='v'>40%</span></div>
-            <div class='legend-item'><span class='l'><span class='legend-dot' style='background:var(--indigo-500);'></span>Team &amp; advisors</span><span class='v'>25%</span></div>
-            <div class='legend-item'><span class='l'><span class='legend-dot' style='background:var(--blue-300);'></span>Ecosystem / treasury</span><span class='v'>20%</span></div>
+            <div class='legend-item'><span class='l'><span class='legend-dot' style='background:var(--indigo-500);'></span>Team &amp; advisors (24mo vest, 6mo cliff)</span><span class='v'>25%</span></div>
+            <div class='legend-item'><span class='l'><span class='legend-dot' style='background:var(--blue-300);'></span>Ecosystem &amp; treasury</span><span class='v'>20%</span></div>
             <div class='legend-item'><span class='l'><span class='legend-dot' style='background:rgba(255,255,255,0.3);'></span>Liquidity</span><span class='v'>15%</span></div>
           </div>
           <div class='detail-list'>
-            <div class='detail-row'><span class='label'>Total supply</span><span class='value'>[e.g. 1,000,000,000 REAL] (example)</span></div>
-            <div class='detail-row'><span class='label'>Contract address</span><span class='value'>0x0000000000000000000000000000000000 (placeholder)</span></div>
-            <div class='detail-row'><span class='label'>Audit report</span><span class='value'>[link, or "not yet audited"]</span></div>
+            <div class='detail-row'><span class='label'>Total supply</span><span class='value'>1,000,000,000 REAL (example)</span></div>
+            <div class='detail-row'><span class='label'>Contract address</span><span class='value'>Not yet deployed &#8212; will be published here once live and verified on-chain</span></div>
+            <div class='detail-row'><span class='label'>Audit report</span><span class='value'>Not yet audited</span></div>
           </div>
         </div>
       </div>
@@ -497,28 +497,35 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Utility</span>
       <h2 class='section-title'>What REAL is used for</h2>
-      <p class='section-desc'><em>List concretely what REAL is actually used for &#8212; only include what's real and functioning, or clearly mark it "planned."</em></p>
+      <p class='section-desc'>What REAL is envisioned to do once the protocol is live &#8212; none of this is functioning yet.</p>
       <div class='grid-auto'>
         <div class='card'>
           <div class='icon-tile'>
             <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M13 2 4 14h7l-1 8 9-12h-7l1-8Z'/></svg>
           </div>
-          <div class='feature-title'>[Utility point 1]</div>
-          <div class='feature-desc'>[Short description]</div>
+          <div class='feature-title'>Governance</div>
+          <div class='feature-desc'>REAL holders would vote on protocol parameters and which real-world asset pools the treasury considers.</div>
         </div>
         <div class='card'>
           <div class='icon-tile'>
             <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/></svg>
           </div>
-          <div class='feature-title'>[Utility point 2]</div>
-          <div class='feature-desc'>[Short description]</div>
+          <div class='feature-title'>Staking &amp; fee-share</div>
+          <div class='feature-desc'>A portion of protocol fees is designed to route back to REAL stakers once the treasury goes live.</div>
         </div>
         <div class='card'>
           <div class='icon-tile'>
             <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M3 12h18M12 3c-3 4-3 14 0 18M12 3c3 4 3 14 0 18'/></svg>
           </div>
-          <div class='feature-title'>[Utility point 3]</div>
-          <div class='feature-desc'>[Short description]</div>
+          <div class='feature-title'>DeFi collateral</div>
+          <div class='feature-desc'>Planned to be usable as collateral within partner lending and liquidity protocols.</div>
+        </div>
+        <div class='card'>
+          <div class='icon-tile'>
+            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M13 2 4 14h7l-1 8 9-12h-7l1-8Z'/></svg>
+          </div>
+          <div class='feature-title'>Tiered access</div>
+          <div class='feature-desc'>Holding REAL is intended to unlock earlier access to future asset pools as they launch.</div>
         </div>
       </div>
     </div>
@@ -529,31 +536,31 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Roadmap</span>
       <h2 class='section-title'>Milestones</h2>
-      <p class='section-desc'><em>Illustrative &#8212; replace with your real milestones and dates.</em></p>
+      <p class='section-desc'>An illustrative build sequence &#8212; audit and legal formation come <em>before</em> any public sale, not after.</p>
       <div class='timeline'>
         <div class='timeline-item'>
           <div class='timeline-dot'></div>
-          <div class='phase'>[Q_ 20__]</div>
-          <h3>[Milestone]</h3>
-          <p>[Short description of what ships in this phase.]</p>
+          <div class='phase'>Phase 1 &#183; Q4 2026</div>
+          <h3>Foundation</h3>
+          <p>Finalize smart contract architecture, publish the whitepaper, open community channels.</p>
         </div>
         <div class='timeline-item'>
           <div class='timeline-dot'></div>
-          <div class='phase'>[Q_ 20__]</div>
-          <h3>[Milestone]</h3>
-          <p>[Short description of what ships in this phase.]</p>
+          <div class='phase'>Phase 2 &#183; Q1 2027</div>
+          <h3>Audit &amp; legal formation</h3>
+          <p>Commission an independent smart contract audit, establish the legal entity, and define the custodial framework for any future asset-backed pools.</p>
         </div>
         <div class='timeline-item'>
           <div class='timeline-dot'></div>
-          <div class='phase'>[Q_ 20__]</div>
-          <h3>[Milestone]</h3>
-          <p>[Short description of what ships in this phase.]</p>
+          <div class='phase'>Phase 3 &#183; Q2 2027</div>
+          <h3>Testnet &amp; sale terms</h3>
+          <p>Deploy to testnet, run a public testing program, and finalize token sale terms and jurisdictional compliance.</p>
         </div>
         <div class='timeline-item'>
           <div class='timeline-dot'></div>
-          <div class='phase'>[Q_ 20__]</div>
-          <h3>[Milestone]</h3>
-          <p>[Short description of what ships in this phase.]</p>
+          <div class='phase'>Phase 4 &#183; Q3 2027</div>
+          <h3>Mainnet launch</h3>
+          <p>Deploy REAL on mainnet, seed initial liquidity, and open governance to token holders.</p>
         </div>
       </div>
     </div>
@@ -563,33 +570,33 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
   <section class='section' id='buy'>
     <div class='section-inner'>
       <span class='eyebrow'>Get started</span>
-      <h2 class='section-title'>How to buy REAL</h2>
-      <p class='section-desc'><em>Only list exchanges/DEXs where the token is actually listed.</em></p>
+      <h2 class='section-title'>REAL isn't live yet &#8212; here's how to be ready</h2>
+      <p class='section-desc'>No exchange or DEX listing exists today. When one does, it will be announced only through the official channels below &#8212; never trust a site or message claiming an early/private sale in the meantime.</p>
       <div class='steps-grid'>
         <div class='card'>
           <div class='step-num'>1</div>
           <div class='feature-title'>Get a wallet</div>
-          <div class='feature-desc'>[e.g. MetaMask, Trust Wallet]</div>
+          <div class='feature-desc'>Set up a self-custody wallet (e.g. MetaMask) ready for Ethereum.</div>
         </div>
         <div class='card'>
           <div class='step-num'>2</div>
-          <div class='feature-title'>Fund it</div>
-          <div class='feature-desc'>[e.g. buy ETH on an exchange]</div>
+          <div class='feature-title'>Follow official channels</div>
+          <div class='feature-desc'>Join the community links below &#8212; that's where the real launch announcement will come from.</div>
         </div>
         <div class='card'>
           <div class='step-num'>3</div>
-          <div class='feature-title'>Go to [exchange/DEX]</div>
-          <div class='feature-desc'>[Only a venue REAL is actually listed on]</div>
+          <div class='feature-title'>Wait for the audit</div>
+          <div class='feature-desc'>No purchase should happen before an independent audit is published.</div>
         </div>
         <div class='card'>
           <div class='step-num'>4</div>
-          <div class='feature-title'>Swap for REAL</div>
-          <div class='feature-desc'>[Confirm the contract address first]</div>
+          <div class='feature-title'>Always verify the contract</div>
+          <div class='feature-desc'>Cross-check any contract address against this page before ever connecting a wallet.</div>
         </div>
       </div>
       <div class='buy-ctas'>
-        <a class='btn btn-primary' href='#'>Buy on Exchange &#8594;</a>
-        <a class='btn btn-outline' href='#'>View contract</a>
+        <a class='btn btn-primary' href='#'>Join the Community &#8594;</a>
+        <a class='btn btn-outline' href='#'>Read the Whitepaper</a>
       </div>
     </div>
   </section>
@@ -602,19 +609,19 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
       <div class='faq-list'>
         <details class='faq-item'>
           <summary>Is REAL backed by real-world assets?</summary>
-          <p>[Answer honestly. If there's no verifiable backing mechanism, say so plainly rather than implying one.]</p>
+          <p>Not today. REAL is currently a concept and demonstration project with no deployed contract and no assets under custody. If real-world backing is introduced in the future, it will come with named, verifiable custodians and public proof-of-reserves &#8212; never asserted without evidence.</p>
         </details>
         <details class='faq-item'>
           <summary>Is this financial advice?</summary>
-          <p>No &#8212; see the disclaimer below. Nothing on this page is financial, investment, legal, or tax advice.</p>
+          <p>No &#8212; see the disclaimer below. Nothing on this page is financial, investment, legal, or tax advice, and nothing here is an offer to sell any security or token.</p>
         </details>
         <details class='faq-item'>
           <summary>Where can I buy REAL?</summary>
-          <p>[List only real, live venues. Remove this answer until REAL is actually listed somewhere.]</p>
+          <p>Nowhere yet. REAL has not launched on any exchange or DEX. Treat any site, DM, or ad claiming to sell REAL right now as a scam.</p>
         </details>
         <details class='faq-item'>
           <summary>Is the contract audited?</summary>
-          <p>[Link the real audit report, or say plainly that it hasn't been audited yet.]</p>
+          <p>No contract has been deployed yet, so there is nothing to audit. An independent audit is planned before any mainnet deployment or public sale &#8212; see the Roadmap above.</p>
         </details>
       </div>
     </div>
@@ -624,7 +631,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
   <section class='section'>
     <div class='section-inner'>
       <div class='notice notice-amber'>
-        <strong>SAMPLE / MOCKUP CONTENT.</strong> This page is a design template only. Every figure, address, date, and claim above is a placeholder for illustration &#8212; none of it describes a real, live, or registered token. Replace every placeholder with accurate, verifiable information before publishing, and consult a qualified legal/financial advisor before soliciting investment in any jurisdiction.
+        <strong>Concept demo, not a live offering.</strong> REAL ASSET COIN has no deployed contract, no audit, no legal entity, no exchange listing, and holds no real-world assets today. The tokenomics split, supply, and roadmap dates above are illustrative examples, not commitments. If this project is developed further, replace every example figure with accurate, verifiable information, and get legal advice for your jurisdiction before soliciting any investment.
       </div>
       <div class='notice notice-amber'>
         <strong>Risk disclaimer:</strong> Cryptocurrencies are highly volatile and speculative assets. Nothing on this page is financial, investment, legal, or tax advice, and nothing here is an offer or solicitation to buy or sell any security or token in any jurisdiction where such an offer would be unlawful. You could lose some or all of the money you put in. Past performance and projected roadmaps are not guarantees of future results. Do your own research and consult a licensed professional before making any investment decision.
