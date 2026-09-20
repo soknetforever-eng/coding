@@ -1,58 +1,52 @@
-# Modern Blue — Blogger Theme
+# REAL ASSET COIN — Blogger crypto landing theme
 
-## Quick option: one-file upload
-
-**`real-asset-coin-theme.xml`** is the full theme with the REAL ASSET COIN
-mockup content baked directly into the page (as a static HTML section) —
-upload just this one file and the complete page renders immediately, no
-need to also create a blog post. Blog posts (if you add any later) still
-appear below it using the same styling. See the "Sample post" section
-below for what's real vs. placeholder in that content — the same rules
-apply here.
-
-
-A minimal, modern Blogger (Blogspot) theme in a blue palette. Single-column
-layout focused entirely on the blog post — no sidebar, no widget clutter.
+**`real-asset-coin-theme.xml`** is a single self-contained Blogger theme:
+a modern, dark, blue/indigo crypto landing page — not a blog layout. Upload
+this one file and the whole page renders immediately (sticky nav, hero,
+about, tokenomics donut chart, utility grid, roadmap timeline, how-to-buy,
+FAQ accordion, disclaimer, footer). There's no post feed — it's a one-page
+site.
 
 ## Features
 
-- Header with blog title + description on a blue gradient
-- Full-width post "card" with serif reading typography, styled blockquotes,
-  code blocks, labels, and comments
-- Automatic dark mode (`prefers-color-scheme`)
-- Responsive down to mobile
-- Older/newer post pager
-- Simple footer
+- Dark, glassy, gradient-glow crypto aesthetic (Space Grotesk + Inter)
+- Sticky nav with a pure-CSS mobile hamburger menu (no JS)
+- Hero with gradient headline, CTA buttons, and token stat pills
+- CSS-only tokenomics donut chart + legend
+- Icon feature grid, vertical roadmap timeline, numbered "how to buy" steps
+- Native `<details>` FAQ accordion (no JS)
+- Fully responsive: fluid type via `clamp()`, grid `auto-fit` cards, stacks
+  cleanly down to small phones
+- Persistent demo/mockup banner + risk disclaimer
 
 ## Install
 
-1. Go to your Blogger dashboard → **Theme** → **Edit HTML** (via the dropdown
-   next to "Customize").
-2. Select all existing XML and delete it.
-3. Paste the contents of `modern-blue.xml`.
-4. Click **Save**.
+1. Go to your Blogger dashboard → **Theme** → the dropdown next to
+   "Customize" → **Edit HTML**.
+2. (Recommended) Back up your current theme first: same dropdown →
+   **Download theme**.
+3. Select all existing XML in the code box, delete it.
+4. Paste the entire contents of `real-asset-coin-theme.xml`.
+5. Click **Save**, then visit your blog's public URL to see it.
 
-Back up your current theme first (Theme → Edit HTML → **Download theme**)
-in case you want to revert.
+## Customizing
 
-## Customizing the color
+- **Colors**: CSS variables at the top of the `<b:skin>` block
+  (`--blue-500`, `--indigo-500`, `--bg`, etc.).
+- **Copy**: everything is static HTML in the `<body>` — edit the text
+  directly in the sections named `hero`, `about`, `tokenomics`, `utility`,
+  `roadmap`, `buy`, `faq`.
+- **Site title**: set via Blogger's own Title/Description settings — it
+  feeds the nav brand and footer through `data:blog.title`.
 
-All colors are CSS variables at the top of the `<b:skin>` block in
-`modern-blue.xml` (`--blue-600`, `--blue-700`, etc.). Change those hex
-values to retheme the whole site.
+## Before you publish anything based on this
 
-## Sample post: crypto token page
+**Every `[bracketed]` value, the tokenomics percentages, and the contract
+address are placeholders** — none of it describes a real token. Before
+this goes live anywhere:
 
-`sample-posts/real-asset-coin-post.html` is a **mockup** post showing how
-to lay out a token/project page (token details, tokenomics table, roadmap,
-how-to-buy, FAQ, disclaimer) using the theme's `.stat-grid`, table, and
-`.callout` styles.
-
-**Every figure, address, and claim in it is a placeholder** — it's a
-layout template, not real content. Before publishing anything based on it:
-
-- Replace every `[bracketed placeholder]` with accurate, verifiable
-  information about your actual project.
+- Replace every placeholder with accurate, verifiable information about
+  your actual project.
 - Only claim asset-backing, audits, or partnerships you can link to
   verifiable proof of.
 - Keep the risk disclaimer — most jurisdictions require clear risk
@@ -60,5 +54,11 @@ layout template, not real content. Before publishing anything based on it:
 - If you're actually soliciting investment, get legal advice for your
   jurisdiction first.
 
-To use it: paste the HTML into a Blogger post via the post editor's
-**HTML view** (the `<>` icon in the post toolbar).
+## Older variants
+
+- `modern-blue.xml` — the original light, blue, blog-post-focused theme
+  (single-column posts, comments, pager). Use this if you actually want a
+  blog rather than a one-page project site.
+- `sample-posts/real-asset-coin-post.html` — the same mockup content laid
+  out as a single blog post (for pasting into a post body on
+  `modern-blue.xml` instead of using the standalone landing page above).
