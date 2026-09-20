@@ -29,3 +29,25 @@ in case you want to revert.
 All colors are CSS variables at the top of the `<b:skin>` block in
 `modern-blue.xml` (`--blue-600`, `--blue-700`, etc.). Change those hex
 values to retheme the whole site.
+
+## Sample post: crypto token page
+
+`sample-posts/real-asset-coin-post.html` is a **mockup** post showing how
+to lay out a token/project page (token details, tokenomics table, roadmap,
+how-to-buy, FAQ, disclaimer) using the theme's `.stat-grid`, table, and
+`.callout` styles.
+
+**Every figure, address, and claim in it is a placeholder** — it's a
+layout template, not real content. Before publishing anything based on it:
+
+- Replace every `[bracketed placeholder]` with accurate, verifiable
+  information about your actual project.
+- Only claim asset-backing, audits, or partnerships you can link to
+  verifiable proof of.
+- Keep the risk disclaimer — most jurisdictions require clear risk
+  disclosure for token marketing, and it's good practice regardless.
+- If you're actually soliciting investment, get legal advice for your
+  jurisdiction first.
+
+To use it: paste the HTML into a Blogger post via the post editor's
+**HTML view** (the `<>` icon in the post toolbar).
