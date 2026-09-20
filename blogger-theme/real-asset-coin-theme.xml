@@ -118,6 +118,17 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
 .btn-outline{background:transparent; border-color:var(--border-strong); color:var(--text);}
 .btn-outline:hover{background:var(--surface);}
 .btn-sm{padding:9px 18px; font-size:13px; border-radius:10px;}
+.btn-wallet{font-family:var(--mono); cursor:pointer;}
+.btn-wallet.is-connected{border-color:var(--blue-400); color:var(--blue-300); background:var(--surface);}
+.btn-wallet.is-connecting{opacity:0.6; pointer-events:none;}
+.wallet-toast{
+  position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(8px);
+  background:var(--bg-soft); border:1px solid var(--border-strong); border-radius:12px;
+  padding:12px 20px; font-size:13.5px; color:var(--text); z-index:200;
+  opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease;
+  box-shadow:0 20px 40px -12px rgba(0,0,0,0.5);
+}
+.wallet-toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
 /* ---- Hero ---- */
 .hero{
@@ -332,6 +343,10 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
   .detail-row{flex-direction:column; gap:4px;}
   .detail-row .value{text-align:left;}
 }
+@media (max-width:420px){
+  #walletBtnLabel{display:none;}
+  .btn-wallet{padding:8px 10px;}
+}
 ]]></b:skin>
 </head>
 <body>
@@ -368,6 +383,10 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
               <a href='#faq'>FAQ</a>
             </div>
             <div class='nav-right'>
+              <button class='btn btn-outline btn-sm btn-wallet' id='connectWalletBtn' title='Connect your wallet &#8212; read-only, no transaction is requested' type='button'>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='6' width='18' height='13' rx='2'/><path d='M3 10h18'/><path d='M16 14h.01'/></svg>
+                <span id='walletBtnLabel'>Connect Wallet</span>
+              </button>
               <a class='btn btn-primary btn-sm' href='#buy'>Get Started</a>
               <label class='nav-toggle' for='navToggle' aria-label='Toggle menu'>
                 <span></span><span></span><span></span>
@@ -689,6 +708,99 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='footer-copy'>&#169; <data:blog.pageTitle/> &#8212; Demo template, not a real offering. Powered by <a href='https://www.blogger.com'>Blogger</a>.</div>
   </div>
 </footer>
+
+<div class='wallet-toast' id='walletToast'></div>
+
+<script type='text/javascript'>
+//<![CDATA[
+(function(){
+  var btn = document.getElementById('connectWalletBtn');
+  var label = document.getElementById('walletBtnLabel');
+  var toast = document.getElementById('walletToast');
+  if(!btn || !label) return;
+
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 4000);
+  }
+
+  function short(addr){
+    return addr.slice(0, 6) + '...' + addr.slice(-4);
+  }
+
+  function setConnected(address){
+    label.textContent = short(address);
+    btn.classList.add('is-connected');
+    btn.classList.remove('is-connecting');
+    btn.title = 'Connected: ' + address;
+  }
+
+  function setDisconnected(){
+    label.textContent = 'Connect Wallet';
+    btn.classList.remove('is-connected');
+    btn.classList.remove('is-connecting');
+    btn.title = 'Connect your wallet — read-only, no transaction is requested';
+  }
+
+  function connect(){
+    var eth = window.ethereum;
+    if(typeof eth === 'undefined'){
+      showToast('No wallet found — opening MetaMask install page.');
+      window.open('https://metamask.io/download/', '_blank', 'noopener');
+      return;
+    }
+    btn.classList.add('is-connecting');
+    eth.request({ method: 'eth_requestAccounts' })
+      .then(function(accounts){
+        if(accounts && accounts.length){
+          setConnected(accounts[0]);
+          showToast('Wallet connected. This is read-only — no transaction was made.');
+        } else {
+          setDisconnected();
+        }
+      })
+      .catch(function(err){
+        setDisconnected();
+        if(err && err.code === 4001){
+          showToast('Connection request was rejected.');
+        } else {
+          showToast('Could not connect wallet.');
+        }
+      });
+  }
+
+  btn.addEventListener('click', function(){
+    if(!btn.classList.contains('is-connected')){
+      connect();
+    }
+  });
+
+  var eth = window.ethereum;
+  if(typeof eth !== 'undefined'){
+    eth.request({ method: 'eth_accounts' })
+      .then(function(accounts){
+        if(accounts && accounts.length) setConnected(accounts[0]);
+      })
+      .catch(function(){});
+
+    if(typeof eth.on === 'function'){
+      eth.on('accountsChanged', function(accounts){
+        if(accounts && accounts.length){
+          setConnected(accounts[0]);
+        } else {
+          setDisconnected();
+          showToast('Wallet disconnected.');
+        }
+      });
+    }
+  }
+})();
+//]]>
+</script>
 
 </body>
 </html>
