@@ -284,6 +284,19 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
 .notice-amber strong{color:#fcd34d;}
 .notice + .notice{margin-top:16px;}
 
+/* ---- Individual post page (item pages only) ---- */
+.post-card{max-width:760px; margin:0 auto;}
+.post-card .post-title{font-size:clamp(24px,4vw,34px); font-weight:700; margin-bottom:14px;}
+.post-card .post-meta{color:var(--text-dim); font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:28px;}
+.post-card .post-body{font-size:17px; color:var(--text-soft);}
+.post-card .post-body p{margin:0 0 18px;}
+.post-card .post-body img{border-radius:12px; margin:20px 0;}
+.post-card .post-body a{color:var(--blue-400); text-decoration:underline;}
+.comments{margin-top:40px; padding-top:24px; border-top:1px solid var(--border);}
+.comments h4{font-family:var(--font-heading); font-size:17px; margin-bottom:16px;}
+.comment-author{font-weight:700; font-size:14px; margin-top:14px; color:var(--text);}
+.comment-body{margin:4px 0 0; color:var(--text-soft); font-size:14.5px;}
+
 /* ---- Footer ---- */
 .site-footer{border-top:1px solid var(--border); padding:48px 24px 32px;}
 .footer-inner{max-width:var(--max-w); margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px;}
@@ -324,7 +337,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
 <body>
 
 <div class='announce'>
-  <strong>Demo template.</strong> Every figure, address, and claim on this page is a placeholder — replace with real, verified information before publishing.
+  <strong>Demo template.</strong> Every figure, address, and claim on this page is a placeholder &#8212; replace with real, verified information before publishing.
 </div>
 
 <header>
@@ -374,7 +387,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='hero-inner'>
       <span class='badge'><span class='dot'></span>REAL &#183; 18 Decimals &#183; [Network]</span>
       <h1>REAL ASSET COIN</h1>
-      <p class='lead'><em>[Replace with your real one-line value proposition — what REAL actually does and for whom. Don't claim real-world asset backing, guaranteed returns, or audits unless you can link to verifiable proof.]</em></p>
+      <p class='lead'><em>[Replace with your real one-line value proposition &#8212; what REAL actually does and for whom. Don't claim real-world asset backing, guaranteed returns, or audits unless you can link to verifiable proof.]</em></p>
       <div class='hero-ctas'>
         <a class='btn btn-primary' href='#buy'>Buy REAL &#8594;</a>
         <a class='btn btn-outline' href='#'>Read Whitepaper</a>
@@ -401,7 +414,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
           <ul class='checklist'>
             <li>
               <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>
-              <span>Audit: <strong>[link to a real, named third-party audit — or state "not yet audited"]</strong></span>
+              <span>Audit: <strong>[link to a real, named third-party audit &#8212; or state "not yet audited"]</strong></span>
             </li>
             <li>
               <svg class='ic' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>
@@ -452,7 +465,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Tokenomics</span>
       <h2 class='section-title'>Token allocation</h2>
-      <p class='section-desc'><em>Example allocation shown below — replace with your real figures.</em></p>
+      <p class='section-desc'><em>Example allocation shown below &#8212; replace with your real figures.</em></p>
 
       <div class='tokenomics-grid'>
         <div class='donut-wrap'>
@@ -484,7 +497,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Utility</span>
       <h2 class='section-title'>What REAL is used for</h2>
-      <p class='section-desc'><em>List concretely what REAL is actually used for — only include what's real and functioning, or clearly mark it "planned."</em></p>
+      <p class='section-desc'><em>List concretely what REAL is actually used for &#8212; only include what's real and functioning, or clearly mark it "planned."</em></p>
       <div class='grid-auto'>
         <div class='card'>
           <div class='icon-tile'>
@@ -516,7 +529,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
     <div class='section-inner'>
       <span class='eyebrow'>Roadmap</span>
       <h2 class='section-title'>Milestones</h2>
-      <p class='section-desc'><em>Illustrative — replace with your real milestones and dates.</em></p>
+      <p class='section-desc'><em>Illustrative &#8212; replace with your real milestones and dates.</em></p>
       <div class='timeline'>
         <div class='timeline-item'>
           <div class='timeline-dot'></div>
@@ -593,7 +606,7 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
         </details>
         <details class='faq-item'>
           <summary>Is this financial advice?</summary>
-          <p>No — see the disclaimer below. Nothing on this page is financial, investment, legal, or tax advice.</p>
+          <p>No &#8212; see the disclaimer below. Nothing on this page is financial, investment, legal, or tax advice.</p>
         </details>
         <details class='faq-item'>
           <summary>Where can I buy REAL?</summary>
@@ -611,13 +624,46 @@ h1,h2,h3,h4{font-family:var(--font-heading); margin:0;}
   <section class='section'>
     <div class='section-inner'>
       <div class='notice notice-amber'>
-        <strong>SAMPLE / MOCKUP CONTENT.</strong> This page is a design template only. Every figure, address, date, and claim above is a placeholder for illustration — none of it describes a real, live, or registered token. Replace every placeholder with accurate, verifiable information before publishing, and consult a qualified legal/financial advisor before soliciting investment in any jurisdiction.
+        <strong>SAMPLE / MOCKUP CONTENT.</strong> This page is a design template only. Every figure, address, date, and claim above is a placeholder for illustration &#8212; none of it describes a real, live, or registered token. Replace every placeholder with accurate, verifiable information before publishing, and consult a qualified legal/financial advisor before soliciting investment in any jurisdiction.
       </div>
       <div class='notice notice-amber'>
         <strong>Risk disclaimer:</strong> Cryptocurrencies are highly volatile and speculative assets. Nothing on this page is financial, investment, legal, or tax advice, and nothing here is an offer or solicitation to buy or sell any security or token in any jurisdiction where such an offer would be unlawful. You could lose some or all of the money you put in. Past performance and projected roadmaps are not guarantees of future results. Do your own research and consult a licensed professional before making any investment decision.
       </div>
     </div>
   </section>
+
+  <!-- Individual post pages only (e.g. if you ever publish a post) -->
+  <b:section class='section' id='blogitem' pageType='item' showaddelement='no'>
+    <b:widget id='Blog1' locked='true' pageType='item' title='Blog Post' type='Blog' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+      </b:widget-settings>
+
+      <b:includable id='main' var='top'>
+        <div class='section-inner'>
+          <b:loop values='data:posts' var='post'>
+            <b:include data='post' name='post'/>
+          </b:loop>
+        </div>
+      </b:includable>
+
+      <b:includable id='post' var='post'>
+        <article class='post-card card'>
+          <b:if cond='data:post.title'>
+            <h1 class='post-title'><data:post.title/></h1>
+          </b:if>
+          <div class='post-meta'>
+            <time expr:datetime='data:post.timestampISO8601'><data:post.dateHeader/></time>
+          </div>
+          <div expr:id='"post-body-" + data:post.id' class='post-body'>
+            <data:post.body/>
+          </div>
+          <b:include data='post' name='comments'/>
+        </article>
+      </b:includable>
+
+    </b:widget>
+  </b:section>
 
 </main>
 
