@@ -15,6 +15,9 @@ setlocal
 ::   5. To stop it: click its "Clipboard Auto-Replace" entry in
 ::      the taskbar to restore the window, then close it (or
 ::      press Ctrl+C in it).
+::   6. To run this automatically at login: press Win+R, type
+::      shell:startup, press Enter, then put a shortcut to this
+::      file in the folder that opens.
 ::
 :: RULES START
 :: 8888=TTTTT
