@@ -1,19 +1,28 @@
 @echo off
+if /I "%~1"=="/silent" goto :RUN
+
+:: First run (double-click): relaunch this same file completely hidden
+:: in the background, then exit immediately. No window stays open and
+:: nothing needs to be pressed.
+powershell -NoProfile -WindowStyle Hidden -Command "Start-Process -WindowStyle Hidden -FilePath '%~f0' -ArgumentList '/silent'"
+exit /b
+
+:RUN
 setlocal
 :: ============================================================
-::  Clipboard Auto-Replace  (single file, Windows)
+::  Clipboard Auto-Replace  (single file, Windows, runs silently)
 :: ============================================================
 ::  HOW TO USE
 ::   1. Edit the rules below, one per line, as FIND=REPLACE
-::      (lines starting with "::" are treated as comments/rules,
-::      everything else in this file is left alone).
-::   2. Save this file, then double-click it to start watching
-::      your clipboard.
+::   2. Save this file, then double-click it. It runs silently in
+::      the background - no window opens and there is nothing to
+::      press.
 ::   3. Copy (Ctrl+C) anything containing FIND text, then Paste
 ::      (Ctrl+V) and you'll get the REPLACE version instead.
-::   4. Editing the rules requires closing and re-running this
-::      file to pick up the changes.
-::   5. Close this window (or press Ctrl+C in it) to stop.
+::   4. To stop it: open Task Manager, find "powershell.exe" /
+::      "Windows PowerShell", and End Task.
+::   5. To pick up rule changes: stop it (step 4), edit the rules,
+::      save, then double-click this file again.
 ::
 :: RULES START
 :: 8888=TTTTT
@@ -28,6 +37,6 @@ setlocal
 :: RULES END
 :: ============================================================
 
-powershell -NoProfile -ExecutionPolicy Bypass -Sta -Command "$path='%~f0'; $lines=Get-Content -LiteralPath $path -Encoding UTF8; $inRules=$false; $map=[ordered]@{}; foreach($l in $lines){ $t=$l.Trim(); if($t -eq ':: RULES START'){ $inRules=$true; continue }; if($t -eq ':: RULES END'){ $inRules=$false; continue }; if($inRules){ if($t.StartsWith('::')){ $t=$t.Substring(2).Trim() }; if($t -eq ''){ continue }; $idx=$t.IndexOf('='); if($idx -lt 1){ continue }; $find=$t.Substring(0,$idx); $repl=$t.Substring($idx+1); if($find -ne ''){ $map[$find]=$repl } } }; Add-Type -AssemblyName System.Windows.Forms; Write-Host ('Clipboard auto-replace running with ' + $map.Count + ' rule(s) from this file.'); Write-Host 'Edit the rules and re-run this file to pick up changes. Press Ctrl+C to stop.'; $lastSeen=$null; $lastSet=$null; while($true){ Start-Sleep -Milliseconds 500; try{ if(-not [System.Windows.Forms.Clipboard]::ContainsText()){ continue }; $cur=[System.Windows.Forms.Clipboard]::GetText() } catch { continue }; if([string]::IsNullOrEmpty($cur)){ continue }; if($cur -eq $lastSeen -or $cur -eq $lastSet){ continue }; $lastSeen=$cur; $new=$cur; foreach($k in $map.Keys){ $new=$new.Replace($k,$map[$k]) }; if($new -ne $cur){ try{ [System.Windows.Forms.Clipboard]::SetText($new); $lastSet=$new; Write-Host 'Replaced clipboard text.' } catch { continue } } } }"
-
-pause
+set "CAR_FILE=%~f0"
+powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -EncodedCommand JABwAGEAdABoACAAPQAgACQAZQBuAHYAOgBDAEEAUgBfAEYASQBMAEUACgAkAGwAaQBuAGUAcwAgAD0AIABHAGUAdAAtAEMAbwBuAHQAZQBuAHQAIAAtAEwAaQB0AGUAcgBhAGwAUABhAHQAaAAgACQAcABhAHQAaAAgAC0ARQBuAGMAbwBkAGkAbgBnACAAVQBUAEYAOAAKACQAaQBuAFIAdQBsAGUAcwAgAD0AIAAkAGYAYQBsAHMAZQAKACQAbQBhAHAAIAA9ACAAWwBvAHIAZABlAHIAZQBkAF0AQAB7AH0ACgBmAG8AcgBlAGEAYwBoACAAKAAkAGwAIABpAG4AIAAkAGwAaQBuAGUAcwApACAAewAKACAAIAAgACAAJAB0ACAAPQAgACQAbAAuAFQAcgBpAG0AKAApAAoAIAAgACAAIABpAGYAIAAoACQAdAAgAC0AZQBxACAAJwA6ADoAIABSAFUATABFAFMAIABTAFQAQQBSAFQAJwApACAAewAgACQAaQBuAFIAdQBsAGUAcwAgAD0AIAAkAHQAcgB1AGUAOwAgAGMAbwBuAHQAaQBuAHUAZQAgAH0ACgAgACAAIAAgAGkAZgAgACgAJAB0ACAALQBlAHEAIAAnADoAOgAgAFIAVQBMAEUAUwAgAEUATgBEACcAKQAgAHsAIAAkAGkAbgBSAHUAbABlAHMAIAA9ACAAJABmAGEAbABzAGUAOwAgAGMAbwBuAHQAaQBuAHUAZQAgAH0ACgAgACAAIAAgAGkAZgAgACgAJABpAG4AUgB1AGwAZQBzACkAIAB7AAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAJAB0AC4AUwB0AGEAcgB0AHMAVwBpAHQAaAAoACcAOgA6ACcAKQApACAAewAgACQAdAAgAD0AIAAkAHQALgBTAHUAYgBzAHQAcgBpAG4AZwAoADIAKQAuAFQAcgBpAG0AKAApACAAfQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACQAdAAgAC0AZQBxACAAJwAnACkAIAB7ACAAYwBvAG4AdABpAG4AdQBlACAAfQAKACAAIAAgACAAIAAgACAAIAAkAGkAZAB4ACAAPQAgACQAdAAuAEkAbgBkAGUAeABPAGYAKAAnAD0AJwApAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAJABpAGQAeAAgAC0AbAB0ACAAMQApACAAewAgAGMAbwBuAHQAaQBuAHUAZQAgAH0ACgAgACAAIAAgACAAIAAgACAAJABmAGkAbgBkACAAPQAgACQAdAAuAFMAdQBiAHMAdAByAGkAbgBnACgAMAAsACAAJABpAGQAeAApAAoAIAAgACAAIAAgACAAIAAgACQAcgBlAHAAbAAgAD0AIAAkAHQALgBTAHUAYgBzAHQAcgBpAG4AZwAoACQAaQBkAHgAIAArACAAMQApAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAJABmAGkAbgBkACAALQBuAGUAIAAnACcAKQAgAHsAIAAkAG0AYQBwAFsAJABmAGkAbgBkAF0AIAA9ACAAJAByAGUAcABsACAAfQAKACAAIAAgACAAfQAKAH0ACgAKAEEAZABkAC0AVAB5AHAAZQAgAC0AQQBzAHMAZQBtAGIAbAB5AE4AYQBtAGUAIABTAHkAcwB0AGUAbQAuAFcAaQBuAGQAbwB3AHMALgBGAG8AcgBtAHMACgAKACQAbABhAHMAdABTAGUAZQBuACAAPQAgACQAbgB1AGwAbAAKACQAbABhAHMAdABTAGUAdAAgAD0AIAAkAG4AdQBsAGwACgAKAHcAaABpAGwAZQAgACgAJAB0AHIAdQBlACkAIAB7AAoAIAAgACAAIABTAHQAYQByAHQALQBTAGwAZQBlAHAAIAAtAE0AaQBsAGwAaQBzAGUAYwBvAG4AZABzACAANQAwADAACgAgACAAIAAgAHQAcgB5ACAAewAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoAC0AbgBvAHQAIABbAFMAeQBzAHQAZQBtAC4AVwBpAG4AZABvAHcAcwAuAEYAbwByAG0AcwAuAEMAbABpAHAAYgBvAGEAcgBkAF0AOgA6AEMAbwBuAHQAYQBpAG4AcwBUAGUAeAB0ACgAKQApACAAewAgAGMAbwBuAHQAaQBuAHUAZQAgAH0ACgAgACAAIAAgACAAIAAgACAAJABjAHUAcgAgAD0AIABbAFMAeQBzAHQAZQBtAC4AVwBpAG4AZABvAHcAcwAuAEYAbwByAG0AcwAuAEMAbABpAHAAYgBvAGEAcgBkAF0AOgA6AEcAZQB0AFQAZQB4AHQAKAApAAoAIAAgACAAIAB9ACAAYwBhAHQAYwBoACAAewAKACAAIAAgACAAIAAgACAAIABjAG8AbgB0AGkAbgB1AGUACgAgACAAIAAgAH0ACgAKACAAIAAgACAAaQBmACAAKABbAHMAdAByAGkAbgBnAF0AOgA6AEkAcwBOAHUAbABsAE8AcgBFAG0AcAB0AHkAKAAkAGMAdQByACkAKQAgAHsAIABjAG8AbgB0AGkAbgB1AGUAIAB9AAoAIAAgACAAIABpAGYAIAAoACQAYwB1AHIAIAAtAGUAcQAgACQAbABhAHMAdABTAGUAZQBuACAALQBvAHIAIAAkAGMAdQByACAALQBlAHEAIAAkAGwAYQBzAHQAUwBlAHQAKQAgAHsAIABjAG8AbgB0AGkAbgB1AGUAIAB9AAoAIAAgACAAIAAkAGwAYQBzAHQAUwBlAGUAbgAgAD0AIAAkAGMAdQByAAoACgAgACAAIAAgACQAbgBlAHcAIAA9ACAAJABjAHUAcgAKACAAIAAgACAAZgBvAHIAZQBhAGMAaAAgACgAJABrACAAaQBuACAAJABtAGEAcAAuAEsAZQB5AHMAKQAgAHsACgAgACAAIAAgACAAIAAgACAAJABuAGUAdwAgAD0AIAAkAG4AZQB3AC4AUgBlAHAAbABhAGMAZQAoACQAawAsACAAJABtAGEAcABbACQAawBdACkACgAgACAAIAAgAH0ACgAKACAAIAAgACAAaQBmACAAKAAkAG4AZQB3ACAALQBuAGUAIAAkAGMAdQByACkAIAB7AAoAIAAgACAAIAAgACAAIAAgAHQAcgB5ACAAewAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFsAUwB5AHMAdABlAG0ALgBXAGkAbgBkAG8AdwBzAC4ARgBvAHIAbQBzAC4AQwBsAGkAcABiAG8AYQByAGQAXQA6ADoAUwBlAHQAVABlAHgAdAAoACQAbgBlAHcAKQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAbABhAHMAdABTAGUAdAAgAD0AIAAkAG4AZQB3AAoAIAAgACAAIAAgACAAIAAgAH0AIABjAGEAdABjAGgAIAB7AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAYwBvAG4AdABpAG4AdQBlAAoAIAAgACAAIAAgACAAIAAgAH0ACgAgACAAIAAgAH0ACgB9AAoA
+exit /b
