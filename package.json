@@ -1,0 +1,19 @@
+{
+  "name": "usdt-staking-pool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational BEP20 USDT deposit/withdraw contract with 10% monthly interest paid from the same pool (Ponzi-style, testnet only).",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:bsctestnet": "hardhat run scripts/deploy.js --network bsctestnet"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0",
+    "solc": "^0.8.20"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
