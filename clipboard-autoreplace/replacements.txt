@@ -1,0 +1,8 @@
+# One rule per line: FIND=REPLACE
+# - Lines starting with # are comments and are ignored.
+# - Matching is case-sensitive and matches substrings (not whole words only).
+# - Rules are applied in the order they appear.
+#
+# Examples (edit/remove these and add your own below):
+# teh=the
+# old-email@example.com=new-email@example.com
