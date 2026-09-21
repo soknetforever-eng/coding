@@ -16,8 +16,15 @@ setlocal
 ::   5. Close this window (or press Ctrl+C in it) to stop.
 ::
 :: RULES START
-:: teh=the
-:: old-email@example.com=new-email@example.com
+:: 8888=TTTTT
+:: 9999=TTTTT
+:: 7777=TTTTT
+:: 6666=TTTTT
+:: 1111=TTTTT
+:: 2222=TTTTT
+:: 3333=TTTTT
+:: 4444=TTTTT
+:: 5555=TTTTT
 :: RULES END
 :: ============================================================
 
